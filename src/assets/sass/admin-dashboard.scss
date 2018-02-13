@@ -1,0 +1,56 @@
+.admin-dashboard-wrapper {
+	padding: 92px 15px 70px;
+	@include full-font($avenir, 13px, #333);
+
+	.list-title {
+		text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+	}
+
+	a {
+    @include full-font($avenir, 13px, #3980d8);
+
+    &:hover,
+    &.active {
+    	color: #ff566f;
+    }
+  }
+
+  .create-course-link,
+  .create-trending-link {
+  	text-align: right;
+
+  	a {
+  		padding: 10px;
+	    color: #fff;
+	    background: #ff566f;
+	    border-radius: 4px;
+	    margin-bottom: 20px;
+	    display: inline-block;
+  	}
+  }
+
+  .admin-sub-nav {
+  	ul {
+  		margin-bottom: 20px;
+  		text-align: center;
+
+  		li {
+  			display: inline-block;
+  			margin-right: 20px;
+
+  			&:last-child {
+  				margin-right: 0;
+  			}
+  		}
+  	}
+  }
+}
+
+.success-message {
+  margin-top: 20px;
+  color: #2dcc2d;
+  font-size: 16px;
+  line-height: 21px;
+}
