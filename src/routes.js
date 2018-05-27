@@ -4,23 +4,76 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 import {PrivateRoute} from './_components';
 
-import Home from './Content/Home/Home';
-import Login from './Authenticate/Login';
-import Logout from './Authenticate/Logout';
-import ForgotPassword from './Authenticate/ForgotPassword';
-import ResetPassword from './Authenticate/ResetPassword';
-import UserList from './Content/User/UserList';
-import UserForm from './Content/User/UserForm';
-import UserCart from './Content/User/UserCart';
-import CategoryList from './Content/Category/CategoryList';
-import CategoryForm from './Content/Category/CategoryForm';
-import ProductForm from './Content/Product/ProductForm';
-import ProductListAdmin from './Content/Product/ProductListAdmin';
-import ProductDetails from './Content/Product/ProductDetails';
-import ContactUs from './Content/ContactUs/ContactUs';
-import QueryList from './Content/ContactUs/QueryList';
-import OrderList from './Content/Orders/OrderList';
-import UserDashboard from './Content/UserDashboard/UserDashboard';
+import asyncComponent from './AsyncComponent';
+
+// Dynamically imported components
+const Home = asyncComponent(() =>
+    import('./Content/Home/Home').then(module => module.default)
+)
+
+const Login = asyncComponent(() =>
+    import('./Authenticate/Login').then(module => module.default)
+)
+
+const Logout = asyncComponent(() =>
+    import('./Authenticate/Logout').then(module => module.default)
+)
+
+const ForgotPassword = asyncComponent(() =>
+    import('./Authenticate/ForgotPassword').then(module => module.default)
+)
+
+const ResetPassword = asyncComponent(() =>
+    import('./Authenticate/ResetPassword').then(module => module.default)
+)
+
+const UserList = asyncComponent(() =>
+    import('./Content/User/UserList').then(module => module.default)
+)
+
+const UserForm = asyncComponent(() =>
+    import('./Content/User/UserForm').then(module => module.default)
+)
+
+const ContactUs = asyncComponent(() =>
+    import('./Content/ContactUs/ContactUs').then(module => module.default)
+)
+
+const QueryList = asyncComponent(() =>
+    import('./Content/ContactUs/QueryList').then(module => module.default)
+)
+
+const UserCart = asyncComponent(() =>
+    import('./Content/User/UserCart').then(module => module.default)
+)
+
+const CategoryList = asyncComponent(() =>
+    import('./Content/Category/CategoryList').then(module => module.default)
+)
+
+const CategoryForm = asyncComponent(() =>
+    import('./Content/Category/CategoryForm').then(module => module.default)
+)
+
+const ProductForm = asyncComponent(() =>
+    import('./Content/Product/ProductForm').then(module => module.default)
+)
+
+const ProductListAdmin = asyncComponent(() =>
+    import('./Content/Product/ProductListAdmin').then(module => module.default)
+)
+
+const ProductDetails = asyncComponent(() =>
+    import('./Content/Product/ProductDetails').then(module => module.default)
+)
+
+const OrderList = asyncComponent(() =>
+    import('./Content/Orders/OrderList').then(module => module.default)
+)
+
+const UserDashboard = asyncComponent(() =>
+    import('./Content/UserDashboard/UserDashboard').then(module => module.default)
+)
 
 class Routes extends Component {
   isAuthenticated() {
